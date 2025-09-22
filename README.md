@@ -1,6 +1,8 @@
 # Custom Linux Distro for Corelight
 
-**custom-linux-distro-corelight** is a minimal Linux distribution designed for network security appliances. It leverages Yocto and Buildroot to create lightweight, secure images tailored for Corelight deployments.
+**custom-linux-distro-corelight** is a minimal Linux distribution designed for network security appliances. It leverages **Yocto** and **Buildroot** to create lightweight, secure, and customizable images tailored for Corelight deployments.
+
+---
 
 ## Features
 - Minimal footprint for embedded and appliance environments
@@ -8,26 +10,102 @@
 - Optimized for security and network monitoring workloads
 - Custom packages and kernel patches included
 
-## Folder Structure
-- `buildroot/` - Buildroot configuration and patches
-- `yocto/` - Yocto layers and recipes
-- `scripts/` - Build and flash scripts
-- `docs/` - Installation and configuration guides
+---
 
-## Getting Started
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/custom-linux-distro-corelight.git
-   ```
-2. Choose a build system (Buildroot or Yocto).
-3. Run the build script:
-   ```bash
-   cd scripts
-   ./build.sh buildroot   # or ./build.sh yocto
-   ```
+## System Requirements
+- **Operating System:** Linux (Ubuntu 20.04+, Fedora 35+, or Debian 11+)
+- **Disk Space:** Minimum 50 GB free
+- **RAM:** 8 GB or more recommended
+- **Tools & Dependencies:**
+  - Git
+  - Docker (optional for containerized builds)
+  - GCC Toolchain (`gcc`, `g++`)
+  - Buildroot dependencies (`make`, `ncurses`, `perl`, `rsync`, etc.)
+  - Yocto dependencies (`bitbake`, `repo`, `python3`, `pip3`)
+
+---
+
+## Supported Architectures
+- ARM Cortex-A7 / A53
+- x86_64 / i386
+- Custom architectures supported via Buildroot or Yocto configuration
+
+---
+
+## Folder Structure
+- `buildroot/` – Buildroot configuration files, defconfigs, and patches
+- `yocto/` – Yocto layers, recipes, and local configuration
+- `scripts/` – Build and flash utility scripts
+- `docs/` – Detailed installation, configuration, and usage guides
+
+---
+
+## Quick Start
+
+### Clone the repository
+```bash
+git clone https://github.com/<your-username>/custom-linux-distro-corelight.git
+cd custom-linux-distro-corelight
+```
+
+### Build with Buildroot
+```bash
+cd scripts
+./build.sh buildroot
+```
+
+### Build with Yocto
+```bash
+cd scripts
+./build.sh yocto
+```
+
+### Flash the built image to a device
+```bash
+./flash.sh /dev/sdX path/to/image
+```
+
+---
+
+## Build Flow Diagram (ASCII)
+```
+   +-----------------+
+   |  Source Config  |
+   +-----------------+
+            |
+            v
+   +-----------------+
+   | Buildroot / Yocto|
+   +-----------------+
+            |
+            v
+   +-----------------+
+   |  Linux Image     |
+   +-----------------+
+            |
+            v
+   +-----------------+
+   | Flash to Device  |
+   +-----------------+
+```
+
+---
+
+## Example Use Cases
+- Deploy a **Corelight Zeek sensor** on a minimal ARM/x86 appliance
+- Build a **custom security monitoring appliance**
+- Experiment with **lightweight Linux distros** for embedded network devices
+
+---
 
 ## Contributing
-Contributions are welcome! Please submit issues or pull requests for bug fixes, enhancements, and new packages.
+Contributions are welcome! Please submit **issues** or **pull requests** for:
+- Bug fixes
+- Enhancements
+- New recipes or packages
+- Documentation improvements
+
+---
 
 ## License
-MIT License
+This project is licensed under the **Apache 2.0**.
