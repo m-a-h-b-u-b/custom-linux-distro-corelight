@@ -1,7 +1,6 @@
 # Custom Linux Distro for Corelight
 
-**custom-linux-distro-corelight** is a minimal Linux distribution designed for network security appliances. It leverages **Yocto** and **Buildroot** to create lightweight, secure, and customizable images tailored for Corelight deployments.
-
+**custom-linux-distro-corelight** is a lightweight, secure Linux distribution designed for network security appliances. Built with Yocto and Buildroot, it allows developers to create customized images optimized for Corelight deployments, Zeek sensors, and embedded monitoring systems. Includes build scripts, configuration templates, and example recipes to simplify appliance creation.
 ---
 
 ## Features
