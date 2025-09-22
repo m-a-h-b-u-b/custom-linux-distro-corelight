@@ -1,0 +1,5 @@
+--- a/README
++++ b/README
+@@ -0,0 +1,2 @@
++# Sample patch for corelight package
++echo "Patch applied successfully!"

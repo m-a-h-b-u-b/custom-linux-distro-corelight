@@ -1,0 +1,6 @@
+BR2_arm=y
+BR2_cortex_a7=y
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_PATH="/opt/gcc-arm"
+BR2_TARGET_ROOTFS_EXT2=y
+BR2_ROOTFS_OVERLAY="board/corelight/rootfs-overlay"
